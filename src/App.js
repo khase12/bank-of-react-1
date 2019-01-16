@@ -6,7 +6,7 @@ import LogIn from "./components/LogIn";
 class App extends Component {
   
   state = {
-    accountBalance: 14568.27,
+    accountBalance: 0,
     currentUser: {
       userName: "Stan",
       passWord: "yolo"
@@ -15,12 +15,17 @@ class App extends Component {
   mockLogin = (userInfor) => {
     this.setState({ currentUser: userInfor });
   };
+  getBalance = (bal)=>{
+    this.setState({accountBalance:bal})
+  }
   render() {
     const HomeComponent = () => (
       <Home accountBalance={this.state.accountBalance} />
     );
     const UserProfileComponent = () => (
       <UserProfile
+      getBalance ={this.getBalance}
+      accountBalance = {this.state.accountBalance}
         userName={this.state.currentUser.userName}
         passWord={this.state.currentUser.passWord}
         date={this.state.accountBalance}

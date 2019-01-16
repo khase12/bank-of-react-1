@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 class LogIn extends Component{
     state = {
@@ -41,7 +41,6 @@ class LogIn extends Component{
                 <input type="password" name="passWord" onChange={this.handleChange} value={this.state.user.passWord}/>
             </div>
             <button type="submit">Log In</button>
-            <Link to="/userProfile">User Profile</Link>
 
             </form>
         )
